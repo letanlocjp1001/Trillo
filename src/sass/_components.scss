@@ -12,6 +12,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @media only screen and (max-width: $bg-smallest) {
+    order: 1;
+    flex: 0 0 100%;
+    background-color: var(--color-grey-light-2);
+  }
   &__input {
     font-family: inherit;
     font-size: inherit;
@@ -112,12 +117,24 @@
   font-size: 1.4rem;
   list-style: none;
   margin-top: 3.5rem;
+  @media only screen and (max-width: $bg-medium) {
+    display: flex;
+    // justify-content: space-between;
+    margin: 0;
+  }
 
   &__item {
     position: relative;
 
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+      @media only screen and (max-width: $bg-medium) {
+        margin-bottom: 0;
+      }
+    }
+
+    @media only screen and (max-width: $bg-medium) {
+      flex: 1;
     }
   }
   &__item::before {
@@ -155,6 +172,15 @@
 
     display: flex;
     align-items: center;
+
+    @media only screen and (max-width: $bg-medium) {
+      justify-content: center;
+      padding: 2rem;
+    }
+    @media only screen and (max-width: $bg-small) {
+      flex-direction: column;
+      padding: 1.5rem 0.5rem;
+    }
   }
 
   &__icon {
@@ -162,6 +188,12 @@
     height: 1.75rem;
     margin-right: 2rem;
     fill: currentColor;
+    @media only screen and (max-width: $bg-small) {
+      margin-right: 0;
+      margin-bottom: 0.7rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }
 
@@ -171,6 +203,9 @@
   color: var(--color-grey-light-1);
   text-align: center;
   padding: 2.5rem;
+  @media only screen and (max-width: $bg-medium) {
+    display: none;
+  }
 }
 
 //=======GALLERY========//
@@ -195,6 +230,10 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
+    @media only screen and (max-width: $bg-small) {
+      font-size: 1.8rem;
+      padding: 1.25rem 2rem;
+    }
   }
   &__stars {
     // flex: 1;
@@ -230,14 +269,27 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    @media only screen and (max-width: $bg-small) {
+      padding: 0 1.5rem;
+    }
     &-average {
       font-size: 2.25rem;
       font-weight: 300;
       margin-bottom: -3px;
+
+      @media only screen and (max-width: $bg-small) {
+        font-size: 1.8rem;
+      }
     }
+
     &-count {
       font-size: 0.8rem;
       text-transform: uppercase;
+
+      @media only screen and (max-width: $bg-small) {
+        font-size: 0.5rem;
+      }
     }
   }
 }
@@ -334,6 +386,7 @@
   }
 
   &__friends {
+    display: flex;
   }
   &__photo {
     box-sizing: content-box;
@@ -357,6 +410,11 @@
   margin-bottom: 3.5rem;
   position: relative;
   overflow: hidden;
+
+  @media only screen and (max-width: $bg-medium) {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
   &__text {
     margin-bottom: 2rem;
     z-index: 10;
@@ -408,6 +466,9 @@
 .cta {
   padding: 3.5rem 0;
   text-align: center;
+  @media only screen and (max-width: $bg-medium) {
+    padding: 2rem 0;
+  }
 
   &__book-now {
     font-size: 2rem;
